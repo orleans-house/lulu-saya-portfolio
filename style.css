@@ -84,10 +84,12 @@ body {
 }
 
 .hero-icon {
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   margin-bottom: 1.5rem;
-  opacity: 0.7;
+  opacity: 0.5;
   color: var(--gold);
+  letter-spacing: 0.5em;
+  text-align: center;
 }
 
 .hero h1 {
@@ -720,6 +722,13 @@ footer .footer-ornament {
   opacity: 0.4;
   font-size: 0.9rem;
   letter-spacing: 0.5em;
+}
+
+.footer-version {
+  margin-top: 0.8rem;
+  font-size: 0.7rem;
+  color: var(--border);
+  letter-spacing: 0.05em;
 }
 
 footer a {
