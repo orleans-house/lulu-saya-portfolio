@@ -156,8 +156,23 @@ body {
 .section.alt {
   background: var(--cream);
   max-width: 100%;
-  padding: 4rem calc((100% - 900px) / 2 + 2rem);
+  padding: 4rem 2rem;
   position: relative;
+}
+
+.section.alt > h2,
+.section.alt > .section-divider,
+.section.alt > .workflow-steps,
+.section.alt > .architecture-diagram,
+.section.alt > .profiles,
+.section.alt > .orleans-values,
+.section.alt > .orleans-description,
+.section.alt > .orleans-link,
+.section.alt > .orleans-crest,
+.section.alt > .orleans-subtitle {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .section.alt::before,
@@ -211,7 +226,6 @@ body {
 /* Orléans House Section */
 .orleans-section {
   text-align: center;
-  padding: 5rem 2rem;
   background: linear-gradient(180deg, var(--ivory) 0%, var(--cream) 40%, var(--ivory) 100%);
   position: relative;
   overflow: hidden;
@@ -484,7 +498,7 @@ body {
 .workflow-steps::before {
   content: '';
   position: absolute;
-  left: 17px;
+  left: 18px;
   top: 36px;
   bottom: 18px;
   width: 1px;
@@ -725,7 +739,6 @@ footer a:hover {
   .profiles { grid-template-columns: 1fr; }
   .tech-grid { grid-template-columns: 1fr; }
   .section.alt {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding: 3rem 1.5rem;
   }
 }
