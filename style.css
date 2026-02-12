@@ -102,7 +102,6 @@ body {
   margin-bottom: 1.5rem;
   opacity: 0.5;
   color: var(--gold);
-  letter-spacing: 0.5em;
   text-align: center;
 }
 
@@ -176,19 +175,9 @@ body {
   position: relative;
 }
 
-.section.alt > h2,
-.section.alt > .section-divider,
-.section.alt > .workflow-steps,
-.section.alt > .architecture-diagram,
-.section.alt > .profiles,
-.section.alt > .orleans-values,
-.section.alt > .orleans-description,
-.section.alt > .orleans-link,
-.section.alt > .orleans-crest,
-.section.alt > .orleans-subtitle {
+.section-inner {
   max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 .section.alt::before,
