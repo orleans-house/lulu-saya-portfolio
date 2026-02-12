@@ -1,0 +1,337 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --lulu-color: #6a5acd;
+  --saya-color: #e8927c;
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --text-primary: #e6edf3;
+  --text-secondary: #8b949e;
+  --accent: #7c6fe0;
+  --gold: #d4a843;
+}
+
+body {
+  font-family: 'Segoe UI', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+
+/* Hero */
+.hero {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #1a1040 0%, #0d1117 50%, #1a0d0d 100%);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 50%, rgba(106, 90, 205, 0.08) 0%, transparent 50%),
+              radial-gradient(circle at 70% 50%, rgba(232, 146, 124, 0.08) 0%, transparent 50%);
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-2%, 2%); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, var(--lulu-color), var(--gold), var(--saya-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tagline {
+  font-size: 1.3rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Sections */
+.section {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section.alt {
+  background: var(--bg-secondary);
+  max-width: 100%;
+  padding-left: calc((100% - 1000px) / 2 + 2rem);
+  padding-right: calc((100% - 1000px) / 2 + 2rem);
+}
+
+.section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+}
+
+/* Profile Cards */
+.profiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.profile-card {
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid #30363d;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.profile-card:hover {
+  transform: translateY(-4px);
+}
+
+.profile-card.lulu:hover {
+  border-color: var(--lulu-color);
+}
+
+.profile-card.saya:hover {
+  border-color: var(--saya-color);
+}
+
+.avatar {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.profile-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.profile-card .title {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.profile-card .role {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.profile-card.lulu .role { color: var(--lulu-color); }
+.profile-card.saya .role { color: var(--saya-color); }
+
+.profile-card ul {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.profile-card ul li {
+  padding: 0.2rem 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.profile-card ul li::before {
+  content: '→ ';
+  color: var(--accent);
+}
+
+.quote {
+  font-style: italic;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  border-left: 2px solid #30363d;
+  padding-left: 1rem;
+  margin-top: 1rem;
+}
+
+/* Workflow */
+.workflow-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.step-content h4 {
+  margin-bottom: 0.3rem;
+}
+
+.step-content p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.step-content code {
+  background: #1a1a2e;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: var(--gold);
+}
+
+/* Tech Grid */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.tech-item {
+  background: var(--bg-secondary);
+  border-radius: 10px;
+  padding: 1.5rem;
+  border: 1px solid #30363d;
+}
+
+.tech-item h4 {
+  margin-bottom: 0.5rem;
+}
+
+.tech-item p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Architecture */
+.architecture-diagram {
+  display: flex;
+  justify-content: center;
+}
+
+.architecture-diagram pre {
+  background: var(--bg-primary);
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid #30363d;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  overflow-x: auto;
+}
+
+/* Projects */
+.project-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.project-card {
+  background: var(--bg-secondary);
+  border-radius: 10px;
+  padding: 1.5rem;
+  border: 1px solid #30363d;
+  transition: border-color 0.2s;
+}
+
+.project-card:hover {
+  border-color: var(--accent);
+}
+
+.project-card h4 {
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.project-meta {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tag {
+  background: rgba(124, 111, 224, 0.15);
+  color: var(--accent);
+  padding: 0.2rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  border-top: 1px solid #30363d;
+}
+
+footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .hero h1 { font-size: 2.2rem; }
+  .profiles { grid-template-columns: 1fr; }
+  .tech-grid { grid-template-columns: 1fr; }
+  .section.alt {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
