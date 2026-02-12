@@ -208,6 +208,148 @@ body {
   background: var(--cream);
 }
 
+/* Orléans House Section */
+.orleans-section {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: linear-gradient(180deg, var(--ivory) 0%, var(--cream) 40%, var(--ivory) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.orleans-section::before {
+  content: '⚜ ⚜ ⚜';
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  color: var(--gold);
+  opacity: 0.15;
+  letter-spacing: 2em;
+}
+
+.orleans-section::after {
+  content: '⚜ ⚜ ⚜';
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  color: var(--gold);
+  opacity: 0.15;
+  letter-spacing: 2em;
+}
+
+.orleans-crest {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 2px 8px rgba(184, 148, 62, 0.3));
+}
+
+.orleans-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text-dark);
+}
+
+.orleans-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: var(--gold);
+  letter-spacing: 0.2em;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.orleans-description {
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+.orleans-description p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+  line-height: 2;
+}
+
+.orleans-values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto 2.5rem;
+}
+
+.orleans-value {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem 1.5rem;
+  border: 1px solid var(--border-light);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.orleans-value::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.orleans-value:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(184, 148, 62, 0.1);
+}
+
+.value-icon {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.orleans-value h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.orleans-value p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.orleans-link {
+  margin-top: 1rem;
+}
+
+.orleans-link a {
+  display: inline-block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  padding: 0.6rem 2rem;
+  border: 1px solid var(--gold);
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.orleans-link a:hover {
+  background: var(--gold);
+  color: white;
+}
+
 /* Profile Cards */
 .profiles {
   display: grid;
@@ -574,6 +716,8 @@ footer a:hover {
 /* Responsive */
 @media (max-width: 700px) {
   .hero h1 { font-size: 2.5rem; }
+  .orleans-section h2 { font-size: 2rem; }
+  .orleans-values { grid-template-columns: 1fr; }
   .profiles { grid-template-columns: 1fr; }
   .tech-grid { grid-template-columns: 1fr; }
   .section.alt {
