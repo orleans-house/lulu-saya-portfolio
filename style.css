@@ -83,6 +83,17 @@ body {
   z-index: 1;
 }
 
+.hero-crest-frame {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.hero-crest {
+  width: 360px;
+  height: auto;
+  display: block;
+}
+
 .hero-icon {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
