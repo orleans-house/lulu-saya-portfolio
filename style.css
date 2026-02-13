@@ -85,35 +85,11 @@ body {
 
 .hero-crest-frame {
   display: inline-block;
-  position: relative;
   margin-bottom: 1.5rem;
-  padding: 1.8rem;
-}
-
-/* outer decorative border */
-.hero-crest-frame::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border: 1px solid var(--gold-light);
-  opacity: 0.5;
-}
-
-/* corner ornaments */
-.hero-crest-frame::after {
-  content: '◆ ✦ ◆';
-  position: absolute;
-  bottom: -0.4rem;
-  left: 50%;
-  transform: translateX(-50%);
-  color: var(--gold);
-  font-size: 0.55rem;
-  letter-spacing: 0.5em;
-  opacity: 0.5;
 }
 
 .hero-crest {
-  width: 180px;
+  width: 200px;
   height: auto;
   display: block;
 }
