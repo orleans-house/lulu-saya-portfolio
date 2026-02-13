@@ -281,7 +281,7 @@ body {
 }
 
 .orleans-description {
-  max-width: 600px;
+  max-width: 750px;
   margin: 0 auto 3rem;
 }
 
@@ -546,13 +546,22 @@ body {
 }
 
 .step-content code {
-  background: var(--blush);
   padding: 0.15rem 0.6rem;
   border-radius: 3px;
   font-size: 0.8rem;
-  color: var(--lulu-color);
   font-family: 'Consolas', monospace;
+}
+
+.step-content code.branch-lulu {
+  background: var(--blush);
+  color: var(--lulu-color);
   border: 1px solid var(--rose-light);
+}
+
+.step-content code.branch-saya {
+  background: #e5edf0;
+  color: var(--saya-color);
+  border: 1px solid #c8d8df;
 }
 
 /* Tech Grid */
@@ -634,12 +643,12 @@ body {
   content: '';
   position: absolute;
   left: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0;
   width: 3px;
-  height: 40%;
-  background: linear-gradient(to bottom, var(--gold), transparent);
+  height: 100%;
+  background: var(--gold);
   border-radius: 0 2px 2px 0;
+  opacity: 0.6;
 }
 
 .project-card:hover {
