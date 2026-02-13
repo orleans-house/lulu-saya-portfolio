@@ -43,9 +43,66 @@ body {
   margin: 0.5rem 0;
 }
 
+/* Navigation */
+.main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(250, 248, 244, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.nav-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0.8rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+.nav-profile.nav-lulu {
+  color: var(--lulu-color);
+  font-weight: 600;
+}
+
+.nav-profile.nav-saya {
+  color: var(--saya-color);
+  font-weight: 600;
+}
+
 /* Hero */
 .hero {
   min-height: 85vh;
+  padding-top: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
