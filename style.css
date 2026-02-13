@@ -1132,6 +1132,134 @@ footer a:hover {
   text-decoration: underline;
 }
 
+/* ─── Loading Screen ─── */
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--ivory);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.8s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.loading-overlay.hide {
+  transform: translateY(-100%);
+}
+
+.loading-content {
+  text-align: center;
+}
+
+.loading-crest {
+  width: 120px;
+  height: auto;
+  opacity: 0;
+  animation: loadCrestIn 0.8s ease 0.2s forwards;
+}
+
+@keyframes loadCrestIn {
+  to { opacity: 1; }
+}
+
+.loading-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  color: var(--gold);
+  letter-spacing: 0.2em;
+  margin-top: 1rem;
+  opacity: 0;
+  animation: loadCrestIn 0.6s ease 0.5s forwards;
+}
+
+.loading-bar-track {
+  width: 180px;
+  height: 2px;
+  background: var(--border);
+  border-radius: 2px;
+  margin: 1.2rem auto 0;
+  overflow: hidden;
+}
+
+.loading-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+/* ─── Hero Particles Canvas ─── */
+.hero-particles-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Cursor Trail Canvas ─── */
+.cursor-trail-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9998;
+}
+
+/* ─── Timeline Pulse Animation ─── */
+@keyframes timeline-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(184, 148, 62, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(184, 148, 62, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(184, 148, 62, 0);
+  }
+}
+
+.timeline-dot.pulse {
+  animation: timeline-pulse 1.5s ease-out;
+}
+
+/* ─── Profile Card 3D Tilt ─── */
+.profile-card {
+  transform-style: preserve-3d;
+  perspective: 800px;
+}
+
+.profile-card .gloss-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.15) 0%, transparent 60%);
+}
+
+.profile-card:hover .gloss-overlay {
+  opacity: 1;
+}
+
+/* ─── Luxury SVG Divider ─── */
+.luxury-divider {
+  text-align: center;
+  padding: 1.5rem 0;
+  line-height: 0;
+}
+
+.luxury-divider svg {
+  width: 280px;
+  max-width: 80%;
+  height: auto;
+}
+
 /* Responsive */
 @media (max-width: 700px) {
   .hero h1 { font-size: 2.5rem; }
