@@ -40,12 +40,6 @@ if (darkToggle) {
   });
 }
 
-// ─── SVG Crest fill animation ───
-setTimeout(() => {
-  const svg = document.querySelector('.hero-crest-svg');
-  if (svg) svg.classList.add('crest-filled');
-}, 3000);
-
 // ─── Intersection Observer for animations ───
 const observerOptions = { threshold: 0.15 };
 
