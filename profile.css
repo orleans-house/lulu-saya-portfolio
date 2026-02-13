@@ -1,0 +1,157 @@
+/* Profile Pages */
+
+.profile-hero {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 2rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-lulu {
+  background:
+    radial-gradient(ellipse at 30% 40%, rgba(213, 204, 230, 0.4) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 60%, rgba(184, 148, 62, 0.08) 0%, transparent 60%),
+    var(--ivory);
+}
+
+.profile-saya {
+  background:
+    radial-gradient(ellipse at 70% 40%, rgba(90, 122, 138, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 30% 60%, rgba(184, 148, 62, 0.08) 0%, transparent 60%),
+    var(--ivory);
+}
+
+.profile-hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.profile-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.profile-lulu h1 {
+  color: var(--lulu-color);
+}
+
+.profile-saya h1 {
+  color: var(--saya-color);
+}
+
+.profile-role {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.profile-fullname {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.profile-tagline {
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-style: italic;
+  opacity: 0.8;
+}
+
+/* Profile Description */
+.profile-description {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.profile-description p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  line-height: 2;
+}
+
+/* Skill Grid */
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.skill-card {
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: border-color 0.3s;
+}
+
+.skill-card:hover {
+  border-color: var(--gold-light);
+}
+
+.skill-card h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.skill-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+/* Trait List */
+.trait-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.trait {
+  display: flex;
+  gap: 1.5rem;
+  align-items: baseline;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.trait-label {
+  flex-shrink: 0;
+  width: 80px;
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .profile-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .skill-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trait {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+}
