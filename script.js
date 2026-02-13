@@ -83,27 +83,21 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// ─── Loading Screen ───
+// ─── Gate Loading Screen ───
 (function() {
   const overlay = document.getElementById('loading-overlay');
-  const bar = document.getElementById('loadingBar');
-  if (!overlay || !bar) return;
+  if (!overlay) return;
   document.body.style.overflow = 'hidden';
-  let progress = 0;
-  const interval = setInterval(() => {
-    progress += Math.random() * 15 + 5;
-    if (progress > 95) progress = 95;
-    bar.style.width = progress + '%';
-  }, 150);
 
   window.addEventListener('load', () => {
-    clearInterval(interval);
-    bar.style.width = '100%';
     setTimeout(() => {
-      overlay.classList.add('hide');
+      overlay.classList.add('open');
       document.body.style.overflow = '';
-      setTimeout(() => overlay.remove(), 800);
-    }, 400);
+      setTimeout(() => {
+        overlay.classList.add('done');
+        overlay.remove();
+      }, 1200);
+    }, 1200);
   });
 })();
 

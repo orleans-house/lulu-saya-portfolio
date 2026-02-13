@@ -1133,61 +1133,114 @@ footer a:hover {
 }
 
 /* ─── Loading Screen ─── */
-.loading-overlay {
+/* Gate Loading Screen */
+.gate-overlay {
   position: fixed;
   inset: 0;
   z-index: 9999;
+  pointer-events: all;
+}
+
+.gate-left,
+.gate-right {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
   background: var(--ivory);
   display: flex;
   align-items: center;
-  justify-content: center;
-  transition: transform 0.8s cubic-bezier(0.76, 0, 0.24, 1);
+  transition: transform 1s cubic-bezier(0.76, 0, 0.24, 1);
+  border: none;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
 }
 
-.loading-overlay.hide {
-  transform: translateY(-100%);
+[data-theme="dark"] .gate-left,
+[data-theme="dark"] .gate-right {
+  background: #1a1a1a;
 }
 
-.loading-content {
+.gate-left {
+  left: 0;
+  justify-content: flex-end;
+  border-right: 2px solid var(--gold);
+}
+
+.gate-right {
+  right: 0;
+  justify-content: flex-start;
+  border-left: 2px solid var(--gold);
+}
+
+.gate-overlay.open .gate-left {
+  transform: translateX(-100%);
+}
+
+.gate-overlay.open .gate-right {
+  transform: translateX(100%);
+}
+
+.gate-overlay.done {
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.gate-ornament {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.gate-fleur {
+  font-size: 2.5rem;
+  color: var(--gold);
+  opacity: 0.4;
+}
+
+.gate-line {
+  width: 1px;
+  height: 120px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  opacity: 0.3;
+  margin-top: 1rem;
+}
+
+.gate-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
-}
-
-.loading-crest {
-  width: 120px;
-  height: auto;
+  z-index: 10000;
   opacity: 0;
-  animation: loadCrestIn 0.8s ease 0.2s forwards;
+  animation: gateCrestIn 0.8s ease 0.2s forwards;
 }
 
-@keyframes loadCrestIn {
-  to { opacity: 1; }
+.gate-crest {
+  width: 140px;
+  height: auto;
 }
 
-.loading-title {
+.gate-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.4rem;
   color: var(--gold);
-  letter-spacing: 0.2em;
-  margin-top: 1rem;
-  opacity: 0;
-  animation: loadCrestIn 0.6s ease 0.5s forwards;
+  letter-spacing: 0.3em;
+  margin-top: 0.8rem;
 }
 
-.loading-bar-track {
-  width: 180px;
-  height: 2px;
-  background: var(--border);
-  border-radius: 2px;
-  margin: 1.2rem auto 0;
-  overflow: hidden;
+.gate-overlay.open .gate-center {
+  animation: gateCrestOut 0.5s ease forwards;
 }
 
-.loading-bar-fill {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg, var(--gold), var(--gold-light));
-  border-radius: 2px;
-  transition: width 0.3s ease;
+@keyframes gateCrestIn {
+  from { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+@keyframes gateCrestOut {
+  to { opacity: 0; transform: translate(-50%, -50%) scale(1.1); }
 }
 
 /* ─── Hero Particles Canvas ─── */
